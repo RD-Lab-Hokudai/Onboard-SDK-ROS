@@ -513,8 +513,10 @@ DJISDKNode::initDataSubscribeFromFC(ros::NodeHandle& nh)
   };
 
   int nTopicRTKSupport    = sizeof(topicRTKSupport)/sizeof(topicRTKSupport[0]);
+  /// @note Reference Github issue dji-sdk/Onboard-SDK-ROS #307
   if (vehicle->subscribe->initPackageFromTopicList(PACKAGE_ID_5HZ, nTopicRTKSupport,
-                                                   topicRTKSupport, 1, 5))
+                                                   //topicRTKSupport, 1, 5))
+                                                   topicRTKSupport, 1, 10))
   {
     ack = vehicle->subscribe->startPackage(PACKAGE_ID_5HZ, WAIT_TIMEOUT);
     if (ack.data == ErrorCode::SubscribeACK::SOURCE_DEVICE_OFFLINE)

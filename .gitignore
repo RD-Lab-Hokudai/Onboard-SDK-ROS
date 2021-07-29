@@ -1,3 +1,7 @@
+# DJI osdk repository which is cloned by cmake_module/External_dijosdkcore.cmake
+Onboard-SDK-3.8.1-build/
+Onboard-SDK-3.8.1/
+
 # ROS package
 devel/
 logs/
